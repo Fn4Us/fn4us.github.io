@@ -1,0 +1,221 @@
+/* Oswald import */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;600&display=swap');
+
+/* css reset */
+* {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+}
+
+/* color root */
+:root {
+  --color-1: #ffffff;
+  --color-2: #231B2F;
+  --color-3: #AF8BEF;
+  --color-4: #342947;
+  --color-5: #663da6;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background: #231B2F;
+  font-family: 'Oswald', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header {
+  width: 80%;
+  height: 95%;
+  box-shadow: 0px 0px 30px rgb(17,13,23);
+  border-radius: 10px;
+  display: flex;
+  background: var(--color-4);
+}
+
+header aside, article {
+  width: 85%;
+  height: 100%;
+  /* border: 1px solid #ffffff; */
+  border-radius: 0px 10px 10px 0px;
+  background: var(--color-4);
+  display: flex;
+  flex-direction: column;
+}
+
+header aside {
+  width: 15%;
+  border-radius: 10px 0px 0px 10px;
+  background: var(--color-5);
+}
+
+header aside h1 {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+header aside h1 i {
+  margin-left: 5px;
+}
+
+
+
+
+
+header article {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  border-radius: 0px 10px 10px 0px;
+  justify-content: flex-start;
+  position: relative;
+}
+
+header article form {
+  margin-bottom: 10px;
+}
+
+article button {
+  padding: 8px 20px;
+  margin: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-family: 'Oswald', sans-serif;
+  font-size: 12px;
+  background: var(--color-5);
+  color: #ffffff;
+  transition: .3s linear;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  align-self: center;
+  margin: 10px auto;
+}
+
+header article h1 {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  color: #ffffff;
+  font-size: 40px;
+  font-weight: 500;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-top: 200px; /* Adjust the margin-top value as needed */
+}
+
+header article embed {
+  align-self: center;
+}
+
+.go-home-button {
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  order: 4;
+  display: block;
+  padding: 8px 20px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-family: 'Oswald', sans-serif;
+  font-size: 12px;
+  background: var(--color-5);
+  color: #ffffff;
+  transition: .3s linear;
+  border-radius: 10px
+}
+
+.go-home-button:hover {
+  background: #1e2337;
+}
+
+#results {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+#results button {
+  display: block;
+  padding: 8px 20px;
+  margin: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-family: 'Oswald', sans-serif;
+  font-size: 12px;
+  background: var(--color-5);
+  color: #ffffff;
+  transition: .3s linear;
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 10px
+}
+
+#results button:hover {
+  background: #1e2337;
+}
+
+header article button img {
+  /* Styles for the image */
+  width: 100px; /* Adjust the width as needed */
+  height: 100px; /* Adjust the height as needed */
+  margin-bottom: 5px; /* Adjust the margin as needed */
+}
+
+
+input[type="text"] {
+  /* Styles for the input element with type="text" */
+  font-family: 'Oswald', sans-serif;
+  color: #ffffff;
+  background-color: var(--color-5);
+  height: 40px; /* Adjust the height as desired */
+  width: 400px;
+  padding: 10px; /* Adjust the padding as desired */
+  border-radius: 10px
+}
+
+input[type="text"]::placeholder {
+  /* Styles for the placeholder text */
+  color: #999999;
+}
+
+form button[type="submit"] {
+  background-color: var(--color-5);
+  color: #ffffff;
+  padding: 8px 20px;
+  border: none;
+  font-family: 'Oswald', sans-serif;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-top: 30px; /* Adjust the margin-top value as needed */
+}
+
+form button[type="submit"]:hover {
+  background-color: #1e2337;
+}
+
