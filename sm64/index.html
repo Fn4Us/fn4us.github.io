@@ -1,55 +1,44 @@
+<!doctype html>
 <html lang="en-us">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Super Mario 64 on the Web!</title>
-<style>
-  body, html{
-    margin: 0;
-    padding: 0;
-    width: 100vw;
-    min-height: 100vh;
-    background-color: #111;
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
-    image-rendering: pixelated;
-    scrollbar-width: none;
-  }
-  ::-webkit-scrollbar {
-    display: none;
-  }
-  #container {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  canvas {
-    width: 100vw;
-    height: 100vh;
-  }
-  #controls {
-    margin-left: 1em;
-    display: flex;
-    align-items: center;
-    position: absolute;
-    margin-top: 1em;
-    margin-right: 1em;
-  }
-  #controls button {
-    position: absolute;
-    top: 0;
-    right: 0;
-  }
-  #controller, #dmca {
-    padding-left: 4em;
-  }
-  
-    #controls h2 {
-    text-align: left;
-  }
-</style>
+    <style>
+      body, html{
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        min-height: 100vh;
+        background-color: #111;
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        image-rendering: pixelated;
+        scrollbar-width: none;
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+      #container {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      canvas {
+        width: 100vw;
+        height: 100vh;
+      }
+      #controls {
+        margin-left: 1em;
+        display: flex;
+        align-items: center;
+      }
+      #controller, #dmca {
+        padding-left: 4em;
+      }
+    </style>
   </head>
   <body>
     <div id="controls">
@@ -70,8 +59,8 @@
         <h2>You can save!</h2>
         <h2>Press page down to hide these instructions.</h2>
         <h2>Press page up to see them again.</h2>
+        <button onclick="goHomeFunction()">Go Home</button>
       </div>
-      <button onclick="goHomeFunction()">Go Home</button>
     </div>
     <div id="container">
       <canvas class="emscripten" id="canvas"></canvas>
@@ -108,8 +97,10 @@
     <script async type="text/javascript" src="sm64.us.f3dex2e.js"></script>
     <script>
       function goHomeFunction() {
-        window.location.href="index.html"
+        window.location.href = "/index.html";
       }
     </script>
   </body>
 </html>
+
+
