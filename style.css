@@ -1,0 +1,155 @@
+/* Oswald import */
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;600&display=swap');
+
+/* css reset */
+
+* {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+}
+
+/* color root */
+
+:root {
+  --color-1: #ffffff;
+  --color-2: #231B2F;
+  --color-3: #AF8BEF;
+  --color-4: #342947;
+  --color-5: #663da6;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background: #231B2F;
+  font-family: 'Oswald', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header {
+  width: 80%;
+  height: 95%;
+  box-shadow: 0px 0px 30px rgb(17,13,23);
+  border-radius: 10px;
+  display: flex;
+  background: var(--color-4);
+}
+
+header aside,
+article {
+  width: 85%;
+  height: 100%;
+  border-radius: 0px 10px 10px 0px;
+  background: var(--color-4);
+}
+
+header aside {
+  width: 15%;
+  border-radius: 10px 0px 0px 10px;
+  background: var(--color-5);
+}
+
+header aside h1 {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+header aside h1 i {
+  margin-left: 5px;
+}
+
+header article {
+  width: 100%;
+  height: 100%;
+  border-radius: 0px 10px 10px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  flex-direction: column;
+}
+
+header article h1 {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  color: #ffffff;
+  font-size: 40px;
+  font-weight: 500;
+  align-items: flex-start;
+  justify-content: center;
+  margin-bottom: 20px;
+  order: 1;
+}
+
+header article h2 {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 500;
+  align-items: flex-start;
+  justify-content: center;
+  margin-bottom: 10px;
+  order: 2; 
+  z-index: 1;
+}
+
+header article embed {
+  position: fixed;
+  top: 70px;
+  left: 42%;
+  align-items: center;
+  order: 3;
+  position: absolute;
+  top: calc(50% - 100px); /* Adjust the value as needed */
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+header article button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  order: 4;
+  display: block;
+  padding: 8px 20px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-family: 'Oswald', sans-serif;
+  font-size: 12px;
+  background: var(--color-5);
+  color: #ffffff;
+  transition: .3s linear;
+  border-radius: 10px
+}
+
+header article button:hover {
+  background: #1e2337;
+}
+
+header article a {
+  position: absolute;
+  top: calc(50% + 100px); /* Adjust the value as needed */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffffff
+}
+
+header article.image-buttons {
+  position: fixed;
+  order: 6;
+}
