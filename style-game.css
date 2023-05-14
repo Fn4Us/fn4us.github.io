@@ -128,3 +128,20 @@ header article a {
   align-items: center;
   background: #ffffff;
 }
+
+header article a {
+  position: fixed;
+  top: 750px;
+  left: 30%;
+  align-items: center;
+  background: #ffffff;
+}
+
+.a-2 {
+  position: fixed;
+  top: 750px;
+  left: 35%;
+  align-items: center;
+  background: #ffffff;
+}
+
