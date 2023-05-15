@@ -1,4 +1,4 @@
-#Fn4Us Games
+# Fn4Us Games
 
 This was a fun project that I made over a weekend that could play games in a browser. This is also my biggest and _most complex website_ yet supprisingly. 
 All of these games I did not make nor do I claim that. This is all legal (I hope) as these games are opensource. 
