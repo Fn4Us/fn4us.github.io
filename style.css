@@ -153,3 +153,14 @@ header article.image-buttons {
   position: fixed;
   order: 6;
 }
+
+
+.chromeh2 {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 500;
+  bottom: 50px;
+}
