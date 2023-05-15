@@ -89,7 +89,7 @@ header article h1 {
   font-weight: 500;
   align-items: flex-start;
   justify-content: center;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   order: 1;
 }
 
@@ -114,8 +114,9 @@ header article embed {
   align-items: center;
   order: 3;
   position: absolute;
-  top: calc(50% - 200px); /* Adjust the value as needed */
+  top: calc(50% - 100px); /* Adjust the value as needed */
   left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 header article button {
