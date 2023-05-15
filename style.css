@@ -1,10 +1,16 @@
+/* Oswald import */
+
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;600&display=swap');
+
+/* css reset */
 
 * {
   padding: 0%;
   margin: 0%;
   box-sizing: border-box;
 }
+
+/* color root */
 
 :root {
   --color-1: #ffffff;
@@ -97,14 +103,19 @@ header article h2 {
   align-items: flex-start;
   justify-content: center;
   margin-bottom: 10px;
-  order: 2;
+  order: 2; 
   z-index: 1;
 }
 
 header article embed {
-  margin-top: 300px; /* Adjust the margin-top value as needed */
-  align-self: center;
-  order: 4;
+  position: fixed;
+  top: 70px;
+  left: 42%;
+  align-items: center;
+  order: 3;
+  position: absolute;
+  top: calc(50% - 200px); /* Adjust the value as needed */
+  left: 50%;
 }
 
 header article button {
@@ -122,24 +133,22 @@ header article button {
   background: var(--color-5);
   color: #ffffff;
   transition: .3s linear;
-border-radius: 10px;
+  border-radius: 10px
 }
 
 header article button:hover {
-background: #1e2337;
+  background: #1e2337;
 }
 
 header article a {
-position: absolute;
-top: calc(50% + 100px);
-left: 50%;
-transform: translate(-50%, -50%);
-background: #ffffff;
-order: 5;
+  position: absolute;
+  top: calc(50% + 100px); /* Adjust the value as needed */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffffff
 }
 
 header article.image-buttons {
-position: fixed;
-order: 6;
+  position: fixed;
+  order: 6;
 }
-    
