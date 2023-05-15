@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-  
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,30 +7,27 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="stylesheet" href="style.css">
   <title>Fn4Us Games</title>
-  </head>
-  
+</head>
 <body>
   <header>
     <aside>
-    <h1>Games Test <i class="bi bi-terminal-plus"></i> </h1>
+      <h1>Games Test <i class="bi bi-terminal-plus"></i> </h1>
     </aside>
     <article>
-      <h1>
-        FN4US GAMES
-      </h1>
-      <h2> (Chromebook Users: Set to 75% zoom for best results) </h2>
-      <h2>
-        Recommended Game Moto X3M
-      </h2>
+      <h1>FN4US GAMES</h1>
+      <h2>(Chromebook Users: Set to 75% zoom for best results)</h2>
+      <div class="content-wrapper">
+        <h2>Recommended Game Moto X3M</h2>
+        <embed type="text/html" src="games/Xmoto-x3m.html" width="500" height="330"></embed>
+        <a href="games/moto-x3m.html">Open in a new page</a>
+      </div>
       <button onclick="searchFunction()">Search</button>
-      <embed type="text/html" src="games/Xmoto-x3m.html" width="500" height="330">
-      <a href="games/moto-x3m.html">Open in a new page</a>
     </article>
   </header>
   <script>
-  function searchFunction() {
-    window.location.href = "search.html" 
-  }
+    function searchFunction() {
+      window.location.href = "search.html";
+    }
   </script>
-  </body>
+</body>
 </html>
