@@ -102,14 +102,11 @@ header article h2 {
 }
 
 header article embed {
-  position: fixed;
-  top: 70px;
-  left: 42%;
-  align-items: center;
-  order: 3;
   position: absolute;
-  top: calc(50% - 200px);
+  top: 50%;
   left: 50%;
+  transform: translate(-50%, -50%);
+  order: 4;
 }
 
 header article button {
