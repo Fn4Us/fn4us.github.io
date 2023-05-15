@@ -102,7 +102,7 @@ header article h2 {
 }
 
 header article embed {
-  margin-top: 150px; /* Adjust the margin-top value as needed */
+  margin-top: 300px; /* Adjust the margin-top value as needed */
   align-self: center;
   order: 4;
 }
