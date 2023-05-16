@@ -1,3 +1,5 @@
+#IF YOU ARE HERE BECAUSE YOU DONT KNOW THE CORRECT LINK, WRONG LINK IDIOT
+
 # Fn4Us Games
 
 This was a fun project that I made over a weekend that could play games in a browser. This is also my biggest and _most complex website_ yet suprisingly. 
