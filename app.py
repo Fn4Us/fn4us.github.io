@@ -51,9 +51,9 @@ def converter():
             responses = [line.strip() for line in lines[2:] if line.strip()]
             parts = [prompt, screen_name] + responses
             # URL-encode parts
-            encoded_parts = [quote(part) for part in parts]
+            encoded_parts = [quote(quote(part)) for part in parts]
             url_path = '_'.join(encoded_parts)
-            url = url_for('generate_image', full_path=url_path + '.png')
+            url = url_for('generate_image', full_path=url_path)
         else:
             url = None
     return render_template_string(FORM_HTML, url=url, default_text=default_text)
@@ -63,7 +63,7 @@ def generate_image(full_path):
     parts = full_path.split('_')
 
     # Decode URL-encoded parts
-    parts = [unquote(part) for part in parts]
+    parts = [unquote(unquote(part)) for part in parts]
 
     if len(parts) < 2:
         # Need at least prompt and screen_name
