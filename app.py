@@ -58,7 +58,7 @@ def converter():
             url = None
     return render_template_string(FORM_HTML, url=url, default_text=default_text)
 
-@app.route('/<path:full_path>.png')
+@app.route('/<path:full_path>')
 def generate_image(full_path):
     parts = full_path.split('_')
 
