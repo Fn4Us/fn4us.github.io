@@ -83,7 +83,7 @@ def generate_image(full_path):
     draw = ImageDraw.Draw(img)
 
     try:
-        font_path = "arial.ttf"  # Adjust as needed
+        font_path = "overpass.ttf"  # Adjust as needed
         screen_name_font = ImageFont.truetype(font_path, 48)
         response_font = ImageFont.truetype(font_path, 30)
     except:
