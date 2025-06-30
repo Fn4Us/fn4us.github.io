@@ -52,7 +52,7 @@ def converter():
             parts = [prompt, screen_name] + responses
             # URL-encode parts
             encoded_parts = [quote(quote(part)) for part in parts]
-            url_path = '_'.join(encoded_parts)
+            url_path = '>'.join(encoded_parts)
             url = url_for('generate_image', full_path=url_path)
         else:
             url = None
@@ -60,7 +60,7 @@ def converter():
 
 @app.route('/<path:full_path>')
 def generate_image(full_path):
-    parts = full_path.split('_')
+    parts = full_path.split('>')
 
     # Decode URL-encoded parts
     parts = [unquote(unquote(part)) for part in parts]
