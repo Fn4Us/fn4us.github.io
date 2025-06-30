@@ -15,8 +15,14 @@ Screen name
 Response 1
 Response 2
 Response 3...">{{ default_text }}</textarea><br>
+  
+  <label>
+    <input type="checkbox" name="show_wordcount"> Show word count?
+  </label><br>
+
   <button type="submit">Generate Image URL</button>
 </form>
+
 {% if url %}
   <p>Generated URL: <a href="{{ url }}" target="_blank">{{ url }}</a></p>
   <img src="{{ url }}" alt="Generated Image" style="max-width: 100%; height: auto; border: 1px solid #ccc; margin-top: 20px;">
@@ -43,14 +49,16 @@ def converter():
     default_text = ""
     if request.method == 'POST':
         input_text = request.form.get('input_text', '').strip()
+        show_wordcount = request.form.get('show_wordcount')
         default_text = input_text
         lines = input_text.split('\n')
         if len(lines) >= 2:
             prompt = lines[0].strip()
+            if show_wordcount:
+                prompt = '$' + prompt  # Prepend $ if checked
             screen_name = lines[1].strip()
             responses = [line.strip() for line in lines[2:] if line.strip()]
             parts = [prompt, screen_name] + responses
-            # URL-encode parts
             encoded_parts = [quote(quote(part)) for part in parts]
             url_path = '>'.join(encoded_parts)
             url = url_for('generate_image', full_path=url_path)
@@ -58,7 +66,7 @@ def converter():
             url = None
     return render_template_string(FORM_HTML, url=url, default_text=default_text)
 
-@app.route('/<path:full_path>')
+@app.route('/<path:full_path>.png')
 def generate_image(full_path):
     parts = full_path.split('>')
 
@@ -66,14 +74,20 @@ def generate_image(full_path):
     parts = [unquote(unquote(part)) for part in parts]
 
     if len(parts) < 2:
-        # Need at least prompt and screen_name
         prompt = "Missing prompt"
         screen_name = "Missing"
         responses = []
     else:
         prompt = parts[0]
-        screen_name = parts[1].upper()
-        responses = parts[2:]
+        show_wordcount = False
+
+        if prompt.startswith("$"):
+            show_wordcount = True
+            prompt = prompt[1:]  # Remove the $ sign from display text
+
+    screen_name = parts[1].upper()
+    responses = parts[2:]
+
 
     top_text, mid_text = split_prompt(prompt)
 
@@ -113,10 +127,25 @@ def generate_image(full_path):
 
     for idx, response in enumerate(responses):
         letter = get_letter(idx)
-        letter_position = (50, 125 + idx * 50)
+        y_position = 125 + idx * 50
+
+        # Draw the letter in red
+        letter_position = (50, y_position)
         draw.text(letter_position, letter, fill="red", font=response_font)
-        response_position = (100, 125 + idx * 50)
+
+        # Draw the response in black
+        response_position = (100, y_position)
         draw.text(response_position, response, fill="black", font=response_font)
+
+        # Draw word count only if requested
+        if show_wordcount:
+            word_count = len(response.split())
+            word_count_text = str(word_count)
+            word_count_width = draw.textlength(word_count_text, font=response_font)
+            right_margin = 100
+            word_count_x = img_width - word_count_width - right_margin
+            word_count_position = (word_count_x, y_position)
+            draw.text(word_count_position, word_count_text, fill="red", font=response_font)
 
     img_io = BytesIO()
     img.save(img_io, 'PNG')
