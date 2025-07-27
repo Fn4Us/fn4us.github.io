@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>tc/tag numberpredict</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+    }
+    #grid {
+      display: grid;
+      grid-template-columns: repeat(10, 24px);
+      grid-template-rows: repeat(10, 24px);
+      gap: 2px;
+      margin-bottom: 15px;
+      user-select: none;
+    }
+    .cell {
+      width: 24px;
+      height: 24px;
+      background-color: white;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    .cell.on {
+      background-color: black;
+    }
+    button {
+      margin-right: 10px;
+    }
+    pre {
+      background: #f2f2f2;
+      padding: 10px;
+      font-size: 14px;
+      border-radius: 4px;
+      max-width: 300px;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Draw a Digit (tc/tag numberpredict)</h2>
+<p>Click and drag on the 10x10 grid. Each row becomes a binary number (e.g., <code>0011111000</code> → <code>248</code>).</p>
+
+<div id="grid"></div>
+
+<button onclick="computeVector()">Get Binary Row Numbers</button>
+<button onclick="clearGrid()">Clear</button>
+
+<pre id="output">Click and drag on the grid to begin drawing.</pre>
+
+<script>
+  const grid = document.getElementById("grid");
+  const output = document.getElementById("output");
+  const size = 10;
+  let cells = [];
+  let mouseDown = false;
+
+  for (let i = 0; i < size * size; i++) {
+    const cell = document.createElement("div");
+    cell.classList.add("cell");
+    cell.dataset.index = i;
+
+    cell.addEventListener("mousedown", () => {
+      mouseDown = true;
+      cell.classList.add("on");
+    });
+
+    cell.addEventListener("mouseover", () => {
+      if (mouseDown) {
+        cell.classList.add("on");
+      }
+    });
+
+    cell.addEventListener("mouseup", () => {
+      mouseDown = false;
+    });
+
+    grid.appendChild(cell);
+    cells.push(cell);
+  }
+
+  document.body.addEventListener("mouseup", () => {
+    mouseDown = false;
+  });
+
+  function computeVector() {
+  let rowNumbers = [];
+  for (let r = 0; r < size; r++) {
+    let binaryString = '';
+    for (let c = 0; c < size; c++) {
+      let i = r * size + c;
+      binaryString += cells[i].classList.contains("on") ? '1' : '0';
+    }
+    let num = parseInt(binaryString, 2);
+    rowNumbers.push(num);
+  }
+  output.textContent = 'Now run "tc/tag numberpredict ' + rowNumbers.join(' ') + '"';
+}
+
+  function clearGrid() {
+    for (let cell of cells) {
+      cell.classList.remove("on");
+    }
+    output.textContent = "Grid cleared.";
+  }
+</script>
+
+</body>
+</html>
