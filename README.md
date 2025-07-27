@@ -1,4 +1,4 @@
-# IF YOU ARE HERE BECAUSE YOU DONT KNOW THE CORRECT LINK, WRONG LINK IDIOT
+# IF YOU ARE HERE BECAUSE YOU DONT KNOW THE CORRECT LINK, WRONG LINK IDIOT (If anyone is here from TWOW central idk why my grammar was so bad 2 years ago lol)
 
 # Fn4Us Games
 
